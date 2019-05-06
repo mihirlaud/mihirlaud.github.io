@@ -29,9 +29,10 @@ a {
 }
 
 li {
-	text-align: left;
-	margin: auto;
-	width: 35%;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-align: left;
+  margin: auto;
+  width: 35%;
 }
 
 .intro, .project, .info {
