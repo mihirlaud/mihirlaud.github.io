@@ -9,7 +9,7 @@ h1 {
   color: #f08526;
 }
 
-h2, h3, p, footer {
+h2, h3, p, footer, li {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -26,6 +26,12 @@ footer {
 a {
   text-decoration: none;
   color: #f08526;
+}
+
+li {
+	text-align: left;
+	margin: auto;
+	width: 35%;
 }
 
 .intro, .project, .info {
