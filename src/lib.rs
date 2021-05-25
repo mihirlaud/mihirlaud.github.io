@@ -2,13 +2,15 @@
 use wasm_bindgen::prelude::*;
 use yew::prelude::*;
 
+mod carousel;
 mod footer;
 mod header;
 mod resume;
 
-use crate::footer::Footer;
-use crate::header::Header;
-use crate::resume::Resume;
+use carousel::Carousel;
+use footer::Footer;
+use header::Header;
+use resume::Resume;
 
 struct Main {
     link: ComponentLink<Self>,
@@ -36,7 +38,7 @@ impl Component for Main {
             <div>
                 <Header />
                 <Resume />
-                //<Carousel />
+                <Carousel />
                 <Footer />
             </div>
         }

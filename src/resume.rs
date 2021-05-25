@@ -49,7 +49,31 @@ impl Component for Resume {
 
         let education = vec![college, highschool];
 
-        let experience = vec![];
+        let blrs_lead = SectionContent {
+            title: "Purdue SigBots".to_string(),
+            subtitle: Some("Software Subteam Lead : June 2021 - Present".to_string()),
+            description: "Lead the development of competition robot software, teach new members, find ways to retain members for multiple seasons".to_string(),
+        };
+
+        let blrs_member = SectionContent {
+            title: "Purdue SigBots".to_string(),
+            subtitle: Some("Software Subteam Member : September 2020 - June 2021".to_string()),
+            description: "Assisted in the development of a chassis control library, implemented autonomous scoring routines for competitive VEX Robotics matches".to_string(),
+        };
+
+        let lunabotics = SectionContent {
+            title: "Purdue Lunabotics".to_string(),
+            subtitle: Some("ROS Developer : August 2020 - June 2021".to_string()),
+            description: "Researched image recognition techniques for robot localization, helped develop ROS framework and Arduino-based motor control for use in NASA Robotic Mining Competition".to_string(),
+        };
+
+        let davidoff = SectionContent {
+            title: "Davidoff & Caruso CPAs, Cranbury, NJ".to_string(),
+            subtitle: Some("Student Assistant : July 2017 - March 2020".to_string()),
+            description: "Aided in clerical work, digitized past client files, created spreadsheets for organizing and cataloging client information".to_string(),
+        };
+
+        let experience = vec![blrs_lead, blrs_member, lunabotics, davidoff];
 
         let technical = SectionContent {
             title: "Technical Skills".to_string(),
@@ -91,9 +115,11 @@ impl Component for Resume {
 
         html! {
             <div class="resume">
-                <div class="section" style="display: flex; justify-contents: center;">
+
+                <div style="display: flex; justify-contents: center;">
                     <img id="headshot" src="headshot.jpeg"/>
                 </div>
+
                 <Section name="Objective" content=objective/>
                 <Section name="Education" content=education />
                 <Section name="Experience" content=experience />
