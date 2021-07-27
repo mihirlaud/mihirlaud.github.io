@@ -28,9 +28,23 @@ impl Component for Footer {
     fn view(&self) -> Html {
         html! {
             <div class="footer">
-                <button class="footer-button">{"GitHub"}</button>
-                <button class="footer-button">{"LinkedIn"}</button>
-                <button class="footer-button">{"Email"}</button>
+                <button class="footer-button">
+                    <a href="https://github.com/mihirlaud" target="_blank">
+                        <img class="footer-img" src="images/github.png"/>
+                    </a>
+                </button>
+
+                <button class="footer-button">
+                    <a href="https://www.linkedin.com/in/mihirlaud" target="_blank">
+                        <img class="footer-img" src="images/linkedin.png"/>
+                    </a>
+                </button>
+
+                <button class="footer-button">
+                    <a href="mailto:mihirlaud@gmail.com" target="_blank">
+                        <img class="footer-img" src="images/email.png"/>
+                    </a>
+                </button>
             </div>
         }
     }

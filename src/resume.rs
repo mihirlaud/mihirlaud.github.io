@@ -52,7 +52,7 @@ impl Component for Resume {
         let blrs_lead = SectionContent {
             title: "Purdue SigBots".to_string(),
             subtitle: Some("Software Subteam Lead : June 2021 - Present".to_string()),
-            description: "Lead the development of competition robot software, teach new members, find ways to retain members for multiple seasons".to_string(),
+            description: "Leading the development of competition robot software, teaching new members, finding ways to retain members for multiple seasons".to_string(),
         };
 
         let blrs_member = SectionContent {
@@ -117,7 +117,7 @@ impl Component for Resume {
             <div class="resume">
 
                 <div style="display: flex; justify-contents: center;">
-                    <img id="headshot" src="headshot.jpeg"/>
+                    <img id="headshot" src="images/headshot.jpeg"/>
                 </div>
 
                 <Section name="Objective" content=objective/>

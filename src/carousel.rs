@@ -19,29 +19,36 @@ impl Component for Carousel {
     type Message = CarouselMsg;
 
     fn create(props: Self::Properties, link: ComponentLink<Self>) -> Self {
+        let arms = Slide {
+            src: "images/arms.jpg".to_string(),
+            title: "ARMS".to_string(),
+            description: "A library for programming VEX robot chassis".to_string(),
+            link: Some("https://github.com/purduesigbots/arms".to_string()),
+        };
+
         let lingua = Slide {
-            src: "lingua.jpg".to_string(),
+            src: "images/lingua.jpg".to_string(),
             title: "Lingua".to_string(),
             description: "A programming language made with beginners in mind".to_string(),
             link: Some("https://github.com/mihirlaud/lingua".to_string()),
         };
 
         let auto_rocket = Slide {
-            src: "auto_rocket.jpg".to_string(),
+            src: "images/auto_rocket.jpg".to_string(),
             title: "auto-rocket".to_string(),
             description: "A MATLAB control simulation for a self-landing rocket".to_string(),
             link: Some("https://github.com/mihirlaud/auto-rocket".to_string()),
         };
 
         let spacex_controls = Slide {
-            src: "spacex.jpg".to_string(),
+            src: "images/spacex.jpg".to_string(),
             title: "SpaceX ISS Docking Controls".to_string(),
             description: "Firefox extension for autonomously docking with SpaceX ISS Simulator"
                 .to_string(),
             link: Some("https://github.com/mihirlaud/spacex-iss-controls".to_string()),
         };
 
-        let slides = vec![lingua, auto_rocket, spacex_controls];
+        let slides = vec![arms, lingua, auto_rocket, spacex_controls];
 
         Self {
             link,
@@ -77,10 +84,9 @@ impl Component for Carousel {
     fn view(&self) -> Html {
         html!(
             <div class="carousel-wrapping" >
-                <div class="carousel-header">
-                    <h2 class="section-name">{"Projects"}</h2>
-                    <p class="section-description">{"These are some of the personal projects I have worked on throughout the years. Feel free to click on the image to explore the source code directly on GitHub."}</p>
-                </div>
+                <h2 class="section-name">{"Projects"}</h2>
+                <p class="section-description">{"These are some of the personal projects I have worked on throughout the years. Feel free to click on the image to explore the source code directly on GitHub."}</p>
+
                 <div class="carousel">
                     {for (0 .. self.slides.len()).map(|index| {
                         let slide = self.slides.get(index).unwrap();
