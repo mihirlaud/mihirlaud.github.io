@@ -8,17 +8,32 @@ Color Palette (Color Hunt no. 144399):
 
 */
 
+@font-face {
+    font-family: Raleway;
+    src: url(fonts/Raleway-Regular.ttf);
+}
+
+@font-face {
+    font-family: Oswald;
+    src: url(fonts/Oswald-Light.ttf);
+}
+
+@font-face {
+    font-family: Lato;
+    src: url(fonts/Lato-Regular.ttf);
+}
+
 body {
     background-color: #393E46;
 }
 
 h1 {
-    font-family: 'Raleway', sans-serif;
+    font-family: Raleway, sans-serif;
     color: #FF850A;
 }
 
 h2, h3 {
-    font-family: 'Oswald', sans-serif;
+    font-family: Oswald, sans-serif;
     line-height: 0.6;
     color: #EEEEEE;
 }
@@ -29,7 +44,7 @@ h4 {
 
 h4, p {
     font-weight: 400;
-    font-family: 'Lato', sans-serif;
+    font-family: Lato, sans-serif;
     color: #EEEEEE;
 }
 

@@ -1,7 +1,6 @@
 use yew::prelude::*;
 
 pub struct Carousel {
-    link: ComponentLink<Self>,
     slides: Vec<Slide>,
     selected: usize,
 }
@@ -18,7 +17,7 @@ impl Component for Carousel {
     type Properties = CarouselProps;
     type Message = CarouselMsg;
 
-    fn create(props: Self::Properties, link: ComponentLink<Self>) -> Self {
+    fn create(_ctx: &Context<Self>) -> Self {
         let arms = Slide {
             src: "images/arms.jpg".to_string(),
             title: "ARMS".to_string(),
@@ -51,13 +50,12 @@ impl Component for Carousel {
         let slides = vec![arms, lingua, auto_rocket, spacex_controls];
 
         Self {
-            link,
             slides,
             selected: 0,
         }
     }
 
-    fn update(&mut self, msg: Self::Message) -> ShouldRender {
+    fn update(&mut self, _ctx: &Context<Self>, msg: Self::Message) -> bool {
         match msg {
             CarouselMsg::MoveLeft => {
                 if self.selected == 0 {
@@ -77,11 +75,8 @@ impl Component for Carousel {
         true
     }
 
-    fn change(&mut self, _props: Self::Properties) -> ShouldRender {
-        false
-    }
-
-    fn view(&self) -> Html {
+    fn view(&self, ctx: &Context<Self>) -> Html {
+        let link = ctx.link();
         html!(
             <div class="carousel-wrapping" >
                 <h2 class="section-name">{"Projects"}</h2>
@@ -101,8 +96,8 @@ impl Component for Carousel {
                             </div>
                         )
                     })}
-                    <button class="carousel-button" id="left-button" onclick={self.link.callback(|_| CarouselMsg::MoveLeft)}>{"❮"}</button>
-                    <button class="carousel-button" id="right-button" onclick={self.link.callback(|_| CarouselMsg::MoveRight)}>{"❯"}</button>
+                    <button class="carousel-button" id="left-button" onclick={link.callback(|_| CarouselMsg::MoveLeft)}>{"❮"}</button>
+                    <button class="carousel-button" id="right-button" onclick={link.callback(|_| CarouselMsg::MoveRight)}>{"❯"}</button>
                 </div>
             </div>
         )

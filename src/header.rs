@@ -1,7 +1,6 @@
 use yew::prelude::*;
 
 pub struct Header {
-    link: ComponentLink<Self>,
 }
 
 #[derive(Properties, Clone, PartialEq)]
@@ -13,19 +12,15 @@ impl Component for Header {
     type Message = Msg;
     type Properties = HeaderProps;
 
-    fn create(props: Self::Properties, link: ComponentLink<Self>) -> Self {
-        Self { link }
+    fn create(_ctx: &Context<Self>) -> Self {
+        Self {  }
     }
 
-    fn update(&mut self, msg: Self::Message) -> ShouldRender {
+    fn update(&mut self, _ctx: &Context<Self>, _msg: Self::Message) -> bool {
         true
     }
 
-    fn change(&mut self, _props: Self::Properties) -> ShouldRender {
-        false
-    }
-
-    fn view(&self) -> Html {
+    fn view(&self, _ctx: &Context<Self>) -> Html {
         html! {
             <div class="header">
                 <div class="header-left">

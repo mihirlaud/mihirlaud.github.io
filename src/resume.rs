@@ -1,7 +1,6 @@
 use yew::prelude::*;
 
 pub struct Resume {
-    link: ComponentLink<Self>,
 }
 
 #[derive(Properties, PartialEq, Clone)]
@@ -13,19 +12,15 @@ impl Component for Resume {
     type Properties = ResumeProps;
     type Message = ResumeMsg;
 
-    fn create(_props: Self::Properties, link: ComponentLink<Self>) -> Self {
-        Resume { link }
+    fn create(_ctx: &Context<Self>) -> Self {
+        Resume { }
     }
 
-    fn update(&mut self, _msg: Self::Message) -> ShouldRender {
+    fn update(&mut self, _ctx: &Context<Self>, _msg: Self::Message) -> bool {
         true
     }
 
-    fn change(&mut self, _props: Self::Properties) -> ShouldRender {
-        false
-    }
-
-    fn view(&self) -> Html {
+    fn view(&self, _ctx: &Context<Self>) -> Html {
         let objective = SectionContent {
             title: "".to_string(),
             subtitle: None,
@@ -120,21 +115,18 @@ impl Component for Resume {
                     <img id="headshot" src="images/headshot.jpeg"/>
                 </div>
 
-                <Section name="Objective" content=objective/>
-                <Section name="Education" content=education />
-                <Section name="Experience" content=experience />
-                <Section name="Skills" content=skills />
-                <Section name="Achievements" content=achievements />
-                <Section name="Hobbies" content=hobbies />
+                <Section name="Objective" content={objective}/>
+                <Section name="Education" content={education} />
+                <Section name="Experience" content={experience} />
+                <Section name="Skills" content={skills} />
+                <Section name="Achievements" content={achievements} />
+                <Section name="Hobbies" content={hobbies} />
             </div>
         }
     }
 }
 
 struct Section {
-    link: ComponentLink<Self>,
-    name: String,
-    content: Vec<SectionContent>,
 }
 
 #[derive(Properties, Clone, PartialEq)]
@@ -149,28 +141,22 @@ impl Component for Section {
     type Properties = SectionProps;
     type Message = SectionMsg;
 
-    fn create(props: Self::Properties, link: ComponentLink<Self>) -> Self {
+    fn create(_ctx: &Context<Self>) -> Self {
         Section {
-            link,
-            name: props.name,
-            content: props.content,
         }
     }
 
-    fn update(&mut self, _msg: Self::Message) -> ShouldRender {
+    fn update(&mut self, _ctx: &Context<Self>, _msg: Self::Message) -> bool {
         true
     }
 
-    fn change(&mut self, props: Self::Properties) -> ShouldRender {
-        self.content = props.content;
-        true
-    }
-
-    fn view(&self) -> Html {
+    fn view(&self, ctx: &Context<Self>) -> Html {
+        let name = &ctx.props().name;
+        let content = &ctx.props().content;
         html! {
             <div class="section">
-                <h2 class="section-name">{self.name.as_str()}</h2>
-                {for self.content.iter().map(|sec| html!(
+                <h2 class="section-name">{name.as_str()}</h2>
+                {content.into_iter().map(|sec| html!(
                     <div class="section-content">
                         <h2 class="section-title">{sec.title.as_str()}</h2>
                         { if sec.subtitle.is_some() { html!(
@@ -178,7 +164,7 @@ impl Component for Section {
                         )} else { html!(<></>)}}
                         <p class="section-description">{sec.description.as_str()}</p>
                     </div>
-                ))}
+                )).collect::<Html>()}
             </div>
         }
     }
