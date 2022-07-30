@@ -1,0 +1,208 @@
+/*
+
+Color Palette (Color Hunt no. 144399):
+- Dark Gray: #222831
+- Medium Gray: #393E46
+- Bright Orange: #FF850A
+- Pale Gray: #EEEEEE
+
+*/
+
+@font-face {
+    font-family: Raleway;
+    src: url(fonts/Raleway-Regular.ttf);
+}
+
+@font-face {
+    font-family: Oswald;
+    src: url(fonts/Oswald-Light.ttf);
+}
+
+@font-face {
+    font-family: Lato;
+    src: url(fonts/Lato-Regular.ttf);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #393E46;
+}
+
+h1 {
+    font-family: Raleway, sans-serif;
+    font-size: 3em;
+    color: #FF850A;
+}
+
+h2, h3 {
+    font-family: Oswald, sans-serif;
+    line-height: 0.6;
+    color: #EEEEEE;
+}
+
+h4 {
+    line-height: 0.6;
+    font-weight: 400;
+}
+
+h4, p {
+    font-family: Lato, sans-serif;
+    color: #EEEEEE;
+}
+
+p {
+    line-height: 1.5;
+    font-size: 1.2em;
+}
+
+.header {
+    margin-top: 10px;
+    padding: 0;
+    overflow: hidden;
+}
+
+#header-left {
+    display: block;
+    float: left;
+    width: 30%;
+}
+
+#header-right {
+    display: block;
+    width: 70%;
+    float: right;
+}
+
+#headshot {
+    border: 10px solid #222831;
+    border-radius: 100%;
+    width: 60%;
+    aspect-ratio: 1/1;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.header-button {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+    padding: 0;
+    border-radius: 100%;
+    border: none;
+    background-color: #222831;
+}
+
+.resume {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.section {
+    margin: 0;
+    padding: 30px 0 30px 0;
+}
+
+.section-content {
+    width: 90%;
+    margin: auto;
+}
+
+.section-name {
+    margin: 0;
+    padding-bottom: 15px;
+    font-size: 2em;
+    border-bottom: 3px solid #FF850A;
+    font-family: 'Lato', sans-serif;
+    color: #FF850A;
+}
+
+.section-inner-content {
+    margin: 30px 0 30px 0; 
+}
+
+.section-title {
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    font-weight: 200;
+    margin: 0;
+    padding: 0;
+    color: #FF850A;
+}
+
+#project-header {
+    width: 90%;
+    margin: auto;
+}
+
+.project {
+    margin: 0;
+    padding: 40px 0 40px 0;
+}
+
+.project-content {
+    width: 85%;
+    margin: auto;
+    display: table;
+    clear: both;
+}
+
+.project-text {
+    float: left;
+    width: 48%;
+    margin: 0;
+    padding: 0 10px;
+}
+
+.project-video {
+    float: left;
+    width: 48%;
+    margin: 0;
+    padding: 0 10px;
+}
+
+.project-name {
+    margin: 0;
+    margin-right: 10px;
+    padding: 10px 0px 15px 10px;
+    font-size: 2em;
+    font-family: 'Lato', sans-serif;
+    background-color: white;
+    color: #FF850A;
+}
+
+.project-description {
+    margin: 0;
+    margin-right: 10px;
+    padding: 10px 0px 15px 10px;
+}
+
+.footer {
+    background-color: #FF850A;
+    width: 100%;
+    margin: auto;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-button {
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+    padding: 0;
+    border-radius: 100%;
+    border: none;
+    background-color: #222831;
+}
+
+.footer-img {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: auto;
+}

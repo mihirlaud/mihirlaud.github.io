@@ -1,7 +1,6 @@
 use yew::prelude::*;
 
 pub struct Header {
-    link: ComponentLink<Self>,
 }
 
 #[derive(Properties, Clone, PartialEq)]
@@ -13,32 +12,45 @@ impl Component for Header {
     type Message = Msg;
     type Properties = HeaderProps;
 
-    fn create(props: Self::Properties, link: ComponentLink<Self>) -> Self {
-        Self { link }
+    fn create(_ctx: &Context<Self>) -> Self {
+        Self {  }
     }
 
-    fn update(&mut self, msg: Self::Message) -> ShouldRender {
+    fn update(&mut self, _ctx: &Context<Self>, _msg: Self::Message) -> bool {
         true
     }
 
-    fn change(&mut self, _props: Self::Properties) -> ShouldRender {
-        false
-    }
-
-    fn view(&self) -> Html {
+    fn view(&self, _ctx: &Context<Self>) -> Html {
         html! {
             <div class="header">
-                <div class="header-left">
-                    <h1>{"Mihir Laud"}</h1>
-                    <h2>{"Aeronautical & Astronautical Engineering Student"}</h2>
-                    <h2>{"Purdue University Class of 2024"}</h2>
+
+                <div id="header-left">
+                    <img id="headshot" src="images/headshot.jpeg"/>
                 </div>
 
-                <div class="header-right">
-                    <h4>{"mihirlaud@gmail.com"}</h4>
-                    <h4>{"732.742.4653"}</h4>
-                    <h4>{"GitHub: mihirlaud"}</h4>
+                <div id="header-right">
+                    <h1>{"Mihir Laud"}</h1>
+                    <h2>{"Aeronautical & Astronautical Engineering Student"}</h2>
+                    <h3>{"Purdue University, Class of 2024"}</h3>
                     <h4>{"Work Status: U.S. Citizen"}</h4>
+
+                    <button class="header-button">
+                        <a href="https://github.com/mihirlaud" target="_blank">
+                            <img class="footer-img" src="images/github.png"/>
+                        </a>
+                    </button>
+
+                    <button class="header-button">
+                        <a href="https://www.linkedin.com/in/mihirlaud" target="_blank">
+                            <img class="footer-img" src="images/linkedin.png"/>
+                        </a>
+                    </button>
+
+                    <button class="header-button">
+                        <a href="mailto:mihirlaud@gmail.com" target="_blank">
+                            <img class="footer-img" src="images/email.png"/>
+                        </a>
+                    </button>
                 </div>
             </div>
         }

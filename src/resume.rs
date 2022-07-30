@@ -1,7 +1,6 @@
 use yew::prelude::*;
 
 pub struct Resume {
-    link: ComponentLink<Self>,
 }
 
 #[derive(Properties, PartialEq, Clone)]
@@ -13,74 +12,102 @@ impl Component for Resume {
     type Properties = ResumeProps;
     type Message = ResumeMsg;
 
-    fn create(_props: Self::Properties, link: ComponentLink<Self>) -> Self {
-        Resume { link }
+    fn create(_ctx: &Context<Self>) -> Self {
+        Resume { }
     }
 
-    fn update(&mut self, _msg: Self::Message) -> ShouldRender {
+    fn update(&mut self, _ctx: &Context<Self>, _msg: Self::Message) -> bool {
         true
     }
 
-    fn change(&mut self, _props: Self::Properties) -> ShouldRender {
-        false
-    }
+    fn view(&self, _ctx: &Context<Self>) -> Html {
+        let about_me_1 = "Hello! My name is Mihir, I'm an aerospace engineering student at Purdue University, specializing in autonomy and controls. I want to help accelerate the growth of the space industry by helping to pioneer safer, faster, and better autonomous systems and to advance the state of robotics technology as it applies to space flight and exploration".to_string();
 
-    fn view(&self) -> Html {
-        let objective = SectionContent {
+        let about_me_1 = SectionContent {
             title: "".to_string(),
             subtitle: None,
-            description: "To accelerate the growth of the space industry by helping to pioneer safer, faster, and better autonomous systems and to advance the state of robotics technology as it applies to space flight and exploration".to_string(),
+            description: about_me_1,
         };
 
-        let objective = vec![objective];
+        let about_me_2 = "I am currently looking for an internship for Summer 2023 working on autonomy in aerospace or related fields. Feel free to contact me through email or other means if you think I'd be a good fit for a role at your company! Below, you can find some of the projects I've worked on and the skills I've learned.".to_string();
+
+        let about_me_2 = SectionContent {
+            title: "".to_string(),
+            subtitle: None,
+            description: about_me_2,
+        };
+
+        let about_me = vec![about_me_1, about_me_2];
 
         let highschool = SectionContent {
             title: "South Brunswick High School".to_string(),
-            subtitle: Some("Monmouth Junction, NJ : 2016 - 2020".to_string()),
-            description: "High School Diploma, GPA: 4.5 (W) / 3.9 (UW)".to_string(),
+            subtitle: Some("High School Diploma : 2016 - 2020".to_string()),
+            description: "Coursework: Data Structures & Algorithms, Mobile App Development. GPA: 4.5/4.0".to_string(),
         };
         let college = SectionContent {
             title: "Purdue University".to_string(),
-            subtitle: Some("West Lafayette, IN : 2020 - May 2024".to_string()),
+            subtitle: Some("BS in Aeronautical and Astronautical Engineering : 2020 - May 2024".to_string()),
             description:
-                "Bachelor of Science in Aeronautical and Astronautical Engineering, GPA: 4.0"
+                "Coursework: Multivariable Calculus, Linear Algebra, Differential Equations and Partial Differential Equations, Aeromechanics I & II, Thermodynamics I, Signal Analysis, Intro to Aerospace Design. GPA: 4.0/4.0"
                     .to_string(),
         };
 
         let education = vec![college, highschool];
 
+        let research = SectionContent {
+            title: "Purdue Autonomous Intelligent Multi-Agent Systems Laboratory".to_string(),
+            subtitle: Some("Undergraduate Research Assistant : September 2021 - May 2022".to_string()),
+            description: "Developed ROS flight controller for Pixhawk flight computer. Implemented and tested controller on custom camera-enabled quadrotor platform. Presented weekly on research progress to graduate members of research lab.".to_string(),
+        };
+
+        let collins = SectionContent {
+            title: "Collins Aerospace".to_string(),
+            subtitle: Some("Software Engineering Co-op : May 2022 - Present".to_string()),
+            description: "Develop test cases for verification of high-level software requirements for Flight Management Systems software. Write automated Python test scripts to execute on virtual testbed. Author peer reviews and revise tests based on feedback.".to_string(),
+        };
+
+        let experience = vec![collins, research];
+
         let blrs_lead = SectionContent {
-            title: "Purdue SigBots".to_string(),
-            subtitle: Some("Software Subteam Lead : June 2021 - Present".to_string()),
-            description: "Leading the development of competition robot software, teaching new members, finding ways to retain members for multiple seasons".to_string(),
+            title: "Purdue SIGBots".to_string(),
+            subtitle: Some("Software Subteam Lead : June 2021 - May 2022".to_string()),
+            description: "Trained new software recruits on ARMS, Purdue's in-house chassis control library. Improved ARMS’s autonomous movement functionality for new AI competition team. Documented software team progress through meeting notes and club-wide presentations.".to_string(),
         };
 
         let blrs_member = SectionContent {
-            title: "Purdue SigBots".to_string(),
+            title: "Purdue SIGBots".to_string(),
             subtitle: Some("Software Subteam Member : September 2020 - June 2021".to_string()),
-            description: "Assisted in the development of a chassis control library, implemented autonomous scoring routines for competitive VEX Robotics matches".to_string(),
+            description: "Write autonomous subroutines for robots to compete in VEX Robotics Competition. Research pure-pursuit algorithms for use in robotic navigation of playing field. Created VOSS library used to provide a common codebase for programming robot mechanisms.".to_string(),
         };
 
         let lunabotics = SectionContent {
             title: "Purdue Lunabotics".to_string(),
             subtitle: Some("ROS Developer : August 2020 - June 2021".to_string()),
-            description: "Researched image recognition techniques for robot localization, helped develop ROS framework and Arduino-based motor control for use in NASA Robotic Mining Competition".to_string(),
+            description: "Researched image recognition techniques for robot localization. Developed ROS framework and Arduino-based motor control for use in NASA Robotic Mining Competition.".to_string(),
         };
 
-        let davidoff = SectionContent {
-            title: "Davidoff & Caruso CPAs, Cranbury, NJ".to_string(),
-            subtitle: Some("Student Assistant : July 2017 - March 2020".to_string()),
-            description: "Aided in clerical work, digitized past client files, created spreadsheets for organizing and cataloging client information".to_string(),
-        };
+        let extracurriculars = vec![blrs_lead, blrs_member, lunabotics];
 
-        let experience = vec![blrs_lead, blrs_member, lunabotics, davidoff];
-
-        let technical = SectionContent {
-            title: "Technical Skills".to_string(),
+        let lang = SectionContent {
+            title: "Programming Languages".to_string(),
             subtitle: None,
             description:
-                "Proficient in Java and C++, working knowledge of Rust, Python, Javascript. Experience with Arduino, Raspberry Pi, ROS (Robotic Operating System), and CAD software (Siemens NX and Autodesk Inventor). Experience with Outlook, Excel, and PowerPoint."
+                "Java (5 years), C++ (5 years), MATLAB (2 years), Python (2 years)."
                     .to_string(),
+        };
+
+        let software = SectionContent {
+            title: "Software & Tools".to_string(),
+            subtitle: None,
+            description:
+                "ROS (Robotic Operating System), CAD software (Siemens NX and Autodesk Inventor), Git, SVN, Outlook, MS Teams, Excel, and PowerPoint."
+                    .to_string(),
+        };
+
+        let hardware = SectionContent {
+            title: "Hardware".to_string(),
+            subtitle: None,
+            description: "Arduino, Raspberry Pi, Pixhawk PX4 Mini, Qualisys Motion Capture. Experience working with ultrasonic, light, and vision sensing.".to_string(),
         };
 
         let gen_skills = SectionContent {
@@ -89,52 +116,22 @@ impl Component for Resume {
             description: "Teamwork, leadership, time management, teaching & communication. Able to think critically and creatively to solve problems. Strong work ethic and determination to find a robust solution to any situation".to_string(),
         };
 
-        let skills = vec![technical, gen_skills];
-
-        let stamps = SectionContent {
-            title: "Stamps Scholarship".to_string(),
-            subtitle: Some("2020 - Present".to_string()),
-            description: "Nationally prestigious merit scholarship awarded to college freshmen. Received a full ride scholarship to Purdue University, as well as enrichment funds for activities including study abroad, leadership conferences, etc.".to_string(),
-        };
-
-        let achievements = vec![stamps];
-
-        let dnd = SectionContent {
-            title: "Dungeons & Dragons".to_string(),
-            subtitle: Some("Player and Dungeon Master : 2020 - Present".to_string()),
-            description: "I got into D&D in the summer of 2020, and I introduced it to my friends winter of that same year. We have weekly sessions where we can get together, have fun, and relax for a couple of hours. As Dungeon Master, I am able to create complex worlds and stories for my players to participate in and enjoy every Saturday.".to_string(),
-        };
-
-        let writing = SectionContent {
-            title: "Writing".to_string(),
-            subtitle: Some("Summer 2019 - Present".to_string()),
-            description: "For the past couple of years, I have been using writing as a form of creative outlet and expression. I write about whatever is on my mind or stories that I come up with; more recently, I have started writing science fiction short stories that combine my areas of interest with larger social issues. I grew up reading a lot of Jules Verne and Isaac Asimov, and I hope to one day achieve their level of rich storytelling.".to_string(),
-        };
-
-        let hobbies = vec![dnd, writing];
+        let skills = vec![lang, software, hardware, gen_skills];
 
         html! {
             <div class="resume">
 
-                <div style="display: flex; justify-contents: center;">
-                    <img id="headshot" src="images/headshot.jpeg"/>
-                </div>
-
-                <Section name="Objective" content=objective/>
-                <Section name="Education" content=education />
-                <Section name="Experience" content=experience />
-                <Section name="Skills" content=skills />
-                <Section name="Achievements" content=achievements />
-                <Section name="Hobbies" content=hobbies />
+                <Section name="About Me" content={about_me}/>
+                <Section name="Education" content={education} />
+                <Section name="Experience" content={experience} />
+                <Section name="Extracurriculars" content={extracurriculars} />
+                <Section name="Skills" content={skills} />
             </div>
         }
     }
 }
 
 struct Section {
-    link: ComponentLink<Self>,
-    name: String,
-    content: Vec<SectionContent>,
 }
 
 #[derive(Properties, Clone, PartialEq)]
@@ -149,36 +146,32 @@ impl Component for Section {
     type Properties = SectionProps;
     type Message = SectionMsg;
 
-    fn create(props: Self::Properties, link: ComponentLink<Self>) -> Self {
+    fn create(_ctx: &Context<Self>) -> Self {
         Section {
-            link,
-            name: props.name,
-            content: props.content,
         }
     }
 
-    fn update(&mut self, _msg: Self::Message) -> ShouldRender {
+    fn update(&mut self, _ctx: &Context<Self>, _msg: Self::Message) -> bool {
         true
     }
 
-    fn change(&mut self, props: Self::Properties) -> ShouldRender {
-        self.content = props.content;
-        true
-    }
-
-    fn view(&self) -> Html {
+    fn view(&self, ctx: &Context<Self>) -> Html {
+        let name = &ctx.props().name;
+        let content = &ctx.props().content;
         html! {
             <div class="section">
-                <h2 class="section-name">{self.name.as_str()}</h2>
-                {for self.content.iter().map(|sec| html!(
-                    <div class="section-content">
-                        <h2 class="section-title">{sec.title.as_str()}</h2>
-                        { if sec.subtitle.is_some() { html!(
-                            <h3 class="section-subtitle">{sec.subtitle.as_ref().unwrap()}</h3>
-                        )} else { html!(<></>)}}
-                        <p class="section-description">{sec.description.as_str()}</p>
-                    </div>
-                ))}
+                <div class="section-content">
+                    <h2 class="section-name">{name.as_str()}</h2>
+                    {content.into_iter().map(|sec| html!(
+                        <div class="section-inner-content">
+                            <h2 class="section-title">{sec.title.as_str()}</h2>
+                            { if sec.subtitle.is_some() { html!(
+                                <h3 class="section-subtitle">{sec.subtitle.as_ref().unwrap()}</h3>
+                            )} else { html!(<></>)}}
+                            <p class="section-description">{sec.description.as_str()}</p>
+                        </div>
+                    )).collect::<Html>()}
+                </div>
             </div>
         }
     }
