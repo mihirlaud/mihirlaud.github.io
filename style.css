@@ -24,11 +24,14 @@ Color Palette (Color Hunt no. 144399):
 }
 
 body {
+    margin: 0;
+    padding: 0;
     background-color: #393E46;
 }
 
 h1 {
     font-family: Raleway, sans-serif;
+    font-size: 3em;
     color: #FF850A;
 }
 
@@ -40,73 +43,93 @@ h2, h3 {
 
 h4 {
     line-height: 0.6;
+    font-weight: 400;
 }
 
 h4, p {
-    font-weight: 400;
     font-family: Lato, sans-serif;
     color: #EEEEEE;
 }
 
+p {
+    line-height: 1.5;
+    font-size: 1.2em;
+}
+
 .header {
-    border: 3px dashed #222831;
+    margin-top: 10px;
+    padding: 0;
     overflow: hidden;
 }
 
-.header-left {
-    margin: 10px;
+#header-left {
     display: block;
     float: left;
+    width: 30%;
 }
 
-.header-right {
-    margin: 10px;
+#header-right {
     display: block;
+    width: 70%;
     float: right;
-}
-
-.resume {
-    width: 60%;
-    margin: auto;
 }
 
 #headshot {
     border: 10px solid #222831;
     border-radius: 100%;
-    width: 300px;
-    height: 300px;
+    width: 60%;
+    aspect-ratio: 1/1;
     margin: auto;
-    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.resume {
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .section {
-    border: 3px dashed #222831;
-    margin-top: 50px;
-    padding-left: 5px;
-    padding-right: 5px;
+    margin: 0;
+    padding: 30px 0 30px 0;
 }
 
 .section-content {
-    margin-top: 30px;
+    width: 90%;
+    margin: auto;
 }
 
 .section-name {
+    margin: 0;
+    padding-bottom: 15px;
+    font-size: 2em;
+    border-bottom: 3px solid #FF850A;
     font-family: 'Lato', sans-serif;
     color: #FF850A;
 }
 
+.section-inner-content {
+    margin: 30px 0 30px 0; 
+}
+
+.section-title {
+    margin-bottom: 15px;
+}
+
 .section-subtitle {
     font-weight: 200;
+    margin: 0;
+    padding: 0;
     color: #FF850A;
 }
 
 .carousel-wrapping {
-    width: 60%;
+    width: 80%;
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 5px;
-    border: 3px dashed #222831;
 }
 
 .carousel {
@@ -177,12 +200,22 @@ h4, p {
 }
 
 .footer {
-    border: 3px dashed #222831;
-    width: 60%;
+    background-color: #FF850A;
+    width: 100%;
     margin: auto;
     margin-top: 30px;
     display: flex;
     justify-content: center;
+}
+
+.header-button {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+    padding: 0;
+    border-radius: 100%;
+    border: none;
+    background-color: #222831;
 }
 
 .footer-button {
