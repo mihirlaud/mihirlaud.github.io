@@ -1,12 +1,12 @@
 #![recursion_limit = "2048"]
 use yew::prelude::*;
 
-mod carousel;
+mod projects;
 mod footer;
 mod header;
 mod resume;
 
-use carousel::Carousel;
+use projects::Projects;
 use footer::Footer;
 use header::Header;
 use resume::Resume;
@@ -34,7 +34,7 @@ impl Component for Model {
             <div>
                 <Header />
                 <Resume />
-                <Carousel />
+                <Projects />
                 <Footer />
             </div>
         }

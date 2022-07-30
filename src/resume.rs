@@ -57,7 +57,7 @@ impl Component for Resume {
         let research = SectionContent {
             title: "Purdue Autonomous Intelligent Multi-Agent Systems Laboratory".to_string(),
             subtitle: Some("Undergraduate Research Assistant : September 2021 - May 2022".to_string()),
-            description: "Developed ROS flight controller for Pixhawk flight computer. Implemented and tested controller on custom camera-enabled quadrotor platform.".to_string(),
+            description: "Developed ROS flight controller for Pixhawk flight computer. Implemented and tested controller on custom camera-enabled quadrotor platform. Presented weekly on research progress to graduate members of research lab.".to_string(),
         };
 
         let collins = SectionContent {
