@@ -1,15 +1,12 @@
 #![recursion_limit = "2048"]
 use yew::prelude::*;
 
-mod projects;
-mod footer;
-mod header;
-mod resume;
+mod components;
+mod topics;
 
-use projects::Projects;
-use footer::Footer;
-use header::Header;
-use resume::Resume;
+use components::board::Board;
+//use components::matchboxes::Matchboxes;
+//use components::score::Scoreboard;
 
 enum Msg {
 }
@@ -22,7 +19,8 @@ impl Component for Model {
     type Properties = ();
 
     fn create(_ctx: &Context<Self>) -> Self {
-        Self {}
+        Self {
+        }
     }
 
     fn update(&mut self, _ctx: &Context<Self>, _msg: Self::Message) -> bool {
@@ -30,12 +28,16 @@ impl Component for Model {
     }
 
     fn view(&self, _ctx: &Context<Self>) -> Html {
+        // This gives us a component's "`Scope`" which allows us to send messages, etc to the component.
         html! {
             <div>
-                <Header />
-                <Resume />
-                <Projects />
-                <Footer />
+                <div class="left">
+                    <Board />
+                    //<Scoreboard />
+                </div>
+                <div class="right">
+                    //<Matchboxes />
+                </div>
             </div>
         }
     }
