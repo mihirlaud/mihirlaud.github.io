@@ -165,24 +165,38 @@ p {
     padding: 0 10px;
 }
 
+@media only screen and (max-width: 1000px) {
+    .project-text {
+        width: 100%;
+        margin: 0;
+        padding: 0 10px;
+    }
+
+    .project-video {
+        width: 100%;
+        margin: 0;
+        padding: 0 10px;
+    }
+}
+
 .project-name {
     margin: 0;
     margin-right: 10px;
     padding: 10px 0px 15px 10px;
     font-size: 2em;
     font-family: 'Lato', sans-serif;
-    background-color: white;
+    background-color: #222831;
     color: #FF850A;
 }
 
 .project-description {
-    margin: 0;
-    margin-right: 10px;
+    margin: 10px 10px 0 0;
     padding: 10px 0px 15px 10px;
+    background-color: #222831;
 }
 
 .footer {
-    background-color: #FF850A;
+    background-color: #222831;
     width: 100%;
     margin: auto;
     margin-top: 30px;
@@ -197,7 +211,7 @@ p {
     padding: 0;
     border-radius: 100%;
     border: none;
-    background-color: #222831;
+    background-color: #393E46;
 }
 
 .footer-img {

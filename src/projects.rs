@@ -83,7 +83,7 @@ impl Component for Project {
                 <div class="project-content">
                     <div class="project-text" style={format!("float: {}", if *left { "left" } else { "right" })}>
                         <h2 class="project-name">{name.as_str()}</h2>
-                        <p class="section-description">{desc.as_str()}</p>
+                        <p class="project-description">{desc.as_str()}</p>
                     </div>
                     <div class="project-video">
                         <iframe width="100%" height="315" src={format!("{}", url)} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen={true}></iframe>

@@ -68,16 +68,16 @@ impl Component for Resume {
 
         let experience = vec![collins, research];
 
+        let blrs_member = SectionContent {
+            title: "Purdue SIGBots".to_string(),
+            subtitle: Some("Software Subteam Member : September 2020 - Present".to_string()),
+            description: "Write autonomous subroutines for robots to compete in VEX Robotics Competition. Research pure-pursuit algorithms for use in robotic navigation of playing field. Created VOSS library used to provide a common codebase for programming robot mechanisms.".to_string(),
+        };
+
         let blrs_lead = SectionContent {
             title: "Purdue SIGBots".to_string(),
             subtitle: Some("Software Subteam Lead : June 2021 - May 2022".to_string()),
             description: "Trained new software recruits on ARMS, Purdue's in-house chassis control library. Improved ARMS’s autonomous movement functionality for new AI competition team. Documented software team progress through meeting notes and club-wide presentations.".to_string(),
-        };
-
-        let blrs_member = SectionContent {
-            title: "Purdue SIGBots".to_string(),
-            subtitle: Some("Software Subteam Member : September 2020 - June 2021".to_string()),
-            description: "Write autonomous subroutines for robots to compete in VEX Robotics Competition. Research pure-pursuit algorithms for use in robotic navigation of playing field. Created VOSS library used to provide a common codebase for programming robot mechanisms.".to_string(),
         };
 
         let lunabotics = SectionContent {
