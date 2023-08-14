@@ -21,7 +21,7 @@ impl Component for Resume {
     }
 
     fn view(&self, _ctx: &Context<Self>) -> Html {
-        let about_me_1 = "Hello! My name is Mihir, I'm an aerospace engineering student at Purdue University, specializing in autonomy and controls. I want to help accelerate the growth of the space industry by helping to pioneer safer, faster, and better autonomous systems and to advance the state of robotics technology as it applies to space flight and exploration".to_string();
+        let about_me_1 = "Hello! My name is Mihir, I'm an aerospace engineering student at Purdue University, specializing in autonomy and controls. I want to help accelerate the growth of the robotics industry by helping to pioneer safer, faster, and better autonomous systems and to raise global standards of living through autonomy and controls.".to_string();
 
         let about_me_1 = SectionContent {
             title: "".to_string(),
@@ -29,7 +29,7 @@ impl Component for Resume {
             description: about_me_1,
         };
 
-        let about_me_2 = "I am currently looking for an internship for Summer 2023 working on autonomy in aerospace or related fields. Feel free to contact me through email or other means if you think I'd be a good fit for a role at your company! Below, you can find some of the projects I've worked on and the skills I've learned.".to_string();
+        let about_me_2 = "I am currently looking for a full time job after I graduate in May 2024 working on autonomy, robotics, and controls. Feel free to contact me through email or other means if you think I'd be a good fit for a role at your company! Below, you can find some of the projects I've worked on and the skills I've learned.".to_string();
 
         let about_me_2 = SectionContent {
             title: "".to_string(),
@@ -66,7 +66,13 @@ impl Component for Resume {
             description: "Develop test cases for verification of high-level software requirements for Flight Management Systems software. Write automated Python test scripts to execute on virtual testbed. Author peer reviews and revise tests based on feedback.".to_string(),
         };
 
-        let experience = vec![collins, research];
+        let frac = SectionContent {
+            title: "Purdue Managed Ecosystem Microbial Ecology Laboratory".to_string(),
+            subtitle: Some("Project Lead : May 2023 - Present".to_string()),
+            description: "Design, build, and program a robotic liquid fractionation system for automating key processes in microbiology research. Tailor design solutions for user-friendliness to maximize adoption in the microbiology community. Reduced cost of prototype by over 95% through off-the-shelf electronics and custom 3D printed structural components. Achieved results comparable to human performance with 5% error with ±0.050 mL precision.".to_string(),
+        };
+
+        let experience = vec![frac, collins, research];
 
         let blrs_member = SectionContent {
             title: "Purdue SIGBots".to_string(),

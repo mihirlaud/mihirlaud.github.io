@@ -22,6 +22,9 @@ impl Component for Projects {
 
     fn view(&self, _ctx: &Context<Self>) -> Html {
 
+        let frac_desc = "In Summer 2023, I designed, built, and programmed a robotic system to automate stable isotope processing, or SIP, for a research lab in Purdue's College of Agriculture. I managed to develop a prototype that was just 5% of the quoted cost of the macihnes normally needed to carry out SIP using only 3D printed parts and off-the-shelf electronics. I am hoping to get my results published in the HardwareX journal this fall.".to_string();
+        let frac_url = "https://www.youtube.com/embed/qtA23hSMj8U".to_string();
+
         let ros_virtual_desc = "As a research assistant in the AIMS Lab, I designed and tested a flight controller for a quadrotor using ROS. This is a video demonstration of the controller moving to multiple specified points in the Gazebo virtual testing environment. ".to_string();
         let ros_virtual_url = "https://www.youtube.com/embed/-N6l_FVbApk".to_string();
 
@@ -35,12 +38,13 @@ impl Component for Projects {
             <div class="projects">
                 <div id="project-header">
                     <h2 class="section-name">{"Projects"}</h2>
-                    <p class="section-description">{"These are some of the projects I have worked on throughout the years. Feel free to click on the image to explore the source code directly on GitHub."}</p>
+                    <p class="section-description">{"These are some of the projects I have worked on throughout the years, both personal and professional. I upload all of my code to GitHub and provide video demonstrations on YouTube so that others can build off of my ideas and make them better."}</p>
                 </div>
 
-                <Project name="ROS Pixhawk Controller" desc={ros_virtual_desc} url={ros_virtual_url} left={true} />
-                <Project name="ROS Mo-Cap Integration" desc={ros_mocap_desc} url={ros_mocap_url} left={false} />
-                <Project name="SIGBots Programming Skills" desc={prog_skills_desc} url={prog_skills_url} left={true} />
+                <Project name="ROS Pixhawk Controller" desc={frac_desc} url={frac_url} left={true} />
+                <Project name="ROS Pixhawk Controller" desc={ros_virtual_desc} url={ros_virtual_url} left={false} />
+                <Project name="ROS Mo-Cap Integration" desc={ros_mocap_desc} url={ros_mocap_url} left={true} />
+                <Project name="SIGBots Programming Skills" desc={prog_skills_desc} url={prog_skills_url} left={false} />
             </div>
         }
     }
