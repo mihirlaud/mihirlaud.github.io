@@ -512,7 +512,7 @@ function initSync(bytes) {
 
 async function init(input) {
     if (typeof input === 'undefined') {
-        input = new URL('mihirlaud-portfolio-9c4abe9d1e20e2c4_bg.wasm', import.meta.url);
+        input = new URL('mihirlaud-portfolio-75927c0f9a93f738_bg.wasm', import.meta.url);
     }
     const imports = getImports();
 

@@ -41,7 +41,7 @@ impl Component for Projects {
                     <p class="section-description">{"These are some of the projects I have worked on throughout the years, both personal and professional. I upload all of my code to GitHub and provide video demonstrations on YouTube so that others can build off of my ideas and make them better."}</p>
                 </div>
 
-                <Project name="ROS Pixhawk Controller" desc={frac_desc} url={frac_url} left={true} />
+                <Project name="Robotic SIP Fractionator" desc={frac_desc} url={frac_url} left={true} />
                 <Project name="ROS Pixhawk Controller" desc={ros_virtual_desc} url={ros_virtual_url} left={false} />
                 <Project name="ROS Mo-Cap Integration" desc={ros_mocap_desc} url={ros_mocap_url} left={true} />
                 <Project name="SIGBots Programming Skills" desc={prog_skills_desc} url={prog_skills_url} left={false} />
